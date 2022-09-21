@@ -30,6 +30,27 @@ class BST{
     BST(){ root = NULL; }
     
     bool isEmpty(){ return root == NULL; }
+//     using iterative approach
+    bool doesExist(int val){
+        if(root == NULL){ return false; }
+        else{
+            Node *temp = root;
+            Node *prev;
+            while(temp){
+                if(temp->getData() == val){ return true; }
+                else if(temp->getData() > val){
+                    prev = temp;
+                    temp = temp->getLeft();
+                }
+                else if(temp->getData() < val){
+                    prev = temp;
+                    temp = temp->getRight();
+                }
+            }
+        }
+        return false;
+    }
+    
     
 //     iterative Approach
     void insert(int val){
