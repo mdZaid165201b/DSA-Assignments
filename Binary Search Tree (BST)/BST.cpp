@@ -92,6 +92,16 @@ class BST{
     void inOrder(){
         inOrder(this->root);
     }
+    void preOrder(Node * root){
+        if(root == NULL){ return; }
+        cout<<root->getData()<<" ";
+        preOrder(root->getLeft());
+        preOrder(root->getRight());
+    }
+    void preOrder(){
+        cout<<endl;
+        preOrder(root);
+    }
 };
 
 
