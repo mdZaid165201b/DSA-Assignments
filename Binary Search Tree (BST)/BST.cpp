@@ -104,6 +104,7 @@ int main()
     bst.insert(2);
     bst.insert(6);
     bst.inOrder();
+    bst.doesExist(5) ? cout<<"FOUND!!!"<<endl : cout<<"NOT FOUND!!!"<<endl;
 
     return 0;
 }
