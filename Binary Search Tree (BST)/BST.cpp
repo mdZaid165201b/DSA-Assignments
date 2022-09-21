@@ -31,6 +31,7 @@ class BST{
     
     bool isEmpty(){ return root == NULL; }
     
+//     iterative Approach
     void insert(int val){
         if(isEmpty()){
             root = new Node(val);
