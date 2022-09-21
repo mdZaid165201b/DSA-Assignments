@@ -91,6 +91,7 @@ class BST{
     }
     void inOrder(){
         inOrder(this->root);
+        cout<<endl;
     }
     void preOrder(Node * root){
         if(root == NULL){ return; }
@@ -99,8 +100,18 @@ class BST{
         preOrder(root->getRight());
     }
     void preOrder(){
-        cout<<endl;
         preOrder(root);
+        cout<<endl;
+    }
+    void postOrder(Node * root){
+        if(root == NULL){ return; }
+        postOrder(root->getLeft());
+        postOrder(root->getRight());
+        cout<<root->getData()<<" ";
+    }
+    void postOrder(){
+        postOrder(root);
+        cout<<endl;
     }
 };
 
