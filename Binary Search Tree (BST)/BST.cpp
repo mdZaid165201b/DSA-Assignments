@@ -125,6 +125,19 @@ class BST{
     bool isFullParent(Node * root){
         return (root->getLeft() != NULL || root->getRight() != NULL);
     }
+    Node * getSmallestNode(){
+        if(root == NULL){ return NULL; }
+        else{
+            Node * temp = root;
+            Node * prev;
+            while(temp){
+                prev = temp;
+                temp = temp->getLeft();
+            }
+            
+            return prev;
+        }
+    }
 };
 
 
