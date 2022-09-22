@@ -125,6 +125,7 @@ class BST{
     bool isFullParent(Node * root){
         return (root->getLeft() != NULL || root->getRight() != NULL);
     }
+    
     Node * getLeftMostNode(){
         if(root == NULL){ return NULL; }
         else{
@@ -138,6 +139,20 @@ class BST{
             return prev;
         }
     }
+    
+    Node * getRightMostNode(){
+        if(root == NULL) { return NULL; }
+        else{
+            Node * temp = root;
+            Node * prev;
+            while(temp){
+                prev = temp;
+                temp = temp->getRight();
+            }
+            return prev;
+        }
+    }
+    
     Node * getLeftChild(Node * root){
         if(root == NULL){ return NULL; }
         return root->getLeft();
