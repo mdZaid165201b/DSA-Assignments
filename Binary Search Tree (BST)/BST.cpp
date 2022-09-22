@@ -121,6 +121,10 @@ class BST{
         }
         return false;
     }
+    
+    bool isFullParent(Node * root){
+        return (root->getLeft() != NULL || root->getRight() != NULL);
+    }
 };
 
 
