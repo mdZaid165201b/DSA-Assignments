@@ -162,6 +162,7 @@ int main()
     bst.doesExist(5) ? cout<<"FOUND!!!"<<endl : cout<<"NOT FOUND!!!"<<endl;
     cout<<bst.getLeftChild(bst.getRoot())->getData();
     cout<<bst.getRightChild(bst.getRoot())->getData()<<endl;
+    cout<<bst.getRightMostNode()->getData();
 
     return 0;
 }
