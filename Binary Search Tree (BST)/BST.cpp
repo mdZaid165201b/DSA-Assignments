@@ -162,6 +162,30 @@ class BST{
         return root->getRight();
     }
     
+    // iterative Approach
+    Node * getSuccessor(){
+        if(root->getRight() == NULL){ return NULL; }
+        else{
+            Node * temp = root->getRight();
+            Node * prev;
+            while(temp != NULL){
+                if(temp->getLeft() != NULL){
+                    temp = temp->getLeft();
+                    break;
+                }
+                prev = temp;
+                temp = temp->getRight();
+            }
+            
+            while(temp){
+                prev = temp;
+                temp = temp->getLeft();
+            }
+            
+            return prev;
+        }
+    }
+    
 };
 
 
