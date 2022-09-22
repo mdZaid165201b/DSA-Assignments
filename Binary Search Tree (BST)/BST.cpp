@@ -113,6 +113,14 @@ class BST{
         postOrder(root);
         cout<<endl;
     }
+    
+    bool isLeafNode(Node * root){
+        if(root == NULL){ return false; }
+        else{
+            if(root->getLeft() == NULL && root->getRight() == NULL){ return true; }
+        }
+        return false;
+    }
 };
 
 
