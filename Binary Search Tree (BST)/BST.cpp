@@ -142,6 +142,7 @@ class BST{
         if(root == NULL){ return NULL; }
         return root->getLeft();
     }
+    
 };
 
 
@@ -156,6 +157,7 @@ int main()
     bst.inOrder();
     bst.doesExist(5) ? cout<<"FOUND!!!"<<endl : cout<<"NOT FOUND!!!"<<endl;
     cout<<bst.getLeftChild(bst.getRoot())->getData();
+    cout<<bst.getRightChild(bst.getRoot())->getData()<<endl;
 
     return 0;
 }
