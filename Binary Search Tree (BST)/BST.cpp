@@ -142,6 +142,10 @@ class BST{
         if(root == NULL){ return NULL; }
         return root->getLeft();
     }
+    Node * getRightChild(Node * root){
+        if(root == NULL){ return NULL; }
+        return root->getRight();
+    }
     
 };
 
