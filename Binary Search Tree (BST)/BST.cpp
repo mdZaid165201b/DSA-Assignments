@@ -200,6 +200,14 @@ class BST{
 
     }
     
+    Node * getPredessor(Node * root){
+        if(root == NULL){ return NULL; }
+        if(root->getLeft() != NULL){
+            return getRightMostNode(root->getLeft());
+        }
+        return NULL;
+    }
+    
     
 };
 
