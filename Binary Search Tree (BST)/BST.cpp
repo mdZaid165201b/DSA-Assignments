@@ -153,6 +153,15 @@ class BST{
         }
     }
     
+    Node * getLeafNode(Node * root){
+        if(root == NULL){ return NULL; }
+        else{
+            Node * temp = getLeftMostNode(root);
+            cout<<"Leaf Node Data =>"<<temp->getData()<<endl;
+            return temp;
+        }
+    }
+    
     Node * getSuccessor(Node * root){
         if(root == NULL){ return NULL; }
         if(root->getRight() != NULL){
