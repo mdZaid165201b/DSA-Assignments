@@ -140,7 +140,7 @@ class BST{
         }
     }
     
-    Node * getRightMostNode(){
+    Node * getRightMostNode(Node * root){
         if(root == NULL) { return NULL; }
         else{
             Node * temp = root;
