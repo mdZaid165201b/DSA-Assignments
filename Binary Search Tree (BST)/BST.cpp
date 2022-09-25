@@ -126,7 +126,7 @@ class BST{
         return (root->getLeft() != NULL || root->getRight() != NULL);
     }
     
-    Node * getLeftMostNode(){
+    Node * getLeftMostNode(Node * root){
         if(root == NULL){ return NULL; }
         else{
             Node * temp = root;
