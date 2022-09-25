@@ -153,37 +153,32 @@ class BST{
         }
     }
     
-    Node * getLeftChild(Node * root){
+    Node * getSuccessor(Node * root){
         if(root == NULL){ return NULL; }
-        return root->getLeft();
-    }
-    Node * getRightChild(Node * root){
-        if(root == NULL){ return NULL; }
-        return root->getRight();
-    }
-    
-    // iterative Approach
-    Node * getSuccessor(){
-        if(root->getRight() == NULL){ return NULL; }
-        else{
-            Node * temp = root->getRight();
-            Node * prev;
-            while(temp != NULL){
-                if(temp->getLeft() != NULL){
-                    temp = temp->getLeft();
-                    break;
+        if(root->getRight() != NULL){
+            return getLeftMostNode(root->getRight());
+        }
+        root = getLeafNode(this->root);
+        
+        if(isLeafNode(root)){
+            Node *temp = this->root;
+            Node *prev;
+            while(temp->getRight() != NULL && temp->getLeft() != NULL){
+                if(temp->getData() < root->getData()){
+                    prev = temp;
+                    temp = temp->getRight();
                 }
-                prev = temp;
-                temp = temp->getRight();
+                else{
+                    prev = temp; 
+                    temp = temp->getLeft();
+                }
+                
+                
             }
-            
-            while(temp){
-                prev = temp;
-                temp = temp->getLeft();
-            }
-            
             return prev;
         }
+        return NULL;
+
     }
     
 };
