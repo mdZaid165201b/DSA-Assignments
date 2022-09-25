@@ -1,4 +1,3 @@
-
 #include <iostream>
 
 using namespace std;
@@ -30,6 +29,8 @@ class BST{
     BST(){ root = NULL; }
     
     bool isEmpty(){ return root == NULL; }
+    
+    Node * getRoot(){ return this->root; }
 //     using iterative approach
     bool doesExist(int val){
         if(root == NULL){ return false; }
@@ -153,11 +154,21 @@ class BST{
         }
     }
     
+    Node * getLeftChild(Node * root){
+        if(root == NULL){ return NULL; }
+        return root->getLeft();
+    }
+    Node * getRightChild(Node * root){
+        if(root == NULL){ return NULL; }
+        return root->getRight();
+    }
+    
+    
+    
     Node * getLeafNode(Node * root){
         if(root == NULL){ return NULL; }
         else{
             Node * temp = getLeftMostNode(root);
-            cout<<"Leaf Node Data =>"<<temp->getData()<<endl;
             return temp;
         }
     }
@@ -167,7 +178,6 @@ class BST{
         if(root->getRight() != NULL){
             return getLeftMostNode(root->getRight());
         }
-        root = getLeafNode(this->root);
         
         if(isLeafNode(root)){
             Node *temp = this->root;
@@ -190,6 +200,7 @@ class BST{
 
     }
     
+    
 };
 
 
@@ -199,13 +210,22 @@ int main()
 {
     BST bst;
     bst.insert(8);
-    bst.insert(2);
+    bst.insert(10);
+    bst.insert(3);
+    bst.insert(1);
     bst.insert(6);
+    bst.insert(4);
+    bst.insert(7);
+    bst.insert(14);
+    bst.insert(13);
+    bst.insert(12);
     bst.inOrder();
     bst.doesExist(5) ? cout<<"FOUND!!!"<<endl : cout<<"NOT FOUND!!!"<<endl;
-    cout<<bst.getLeftChild(bst.getRoot())->getData();
-    cout<<bst.getRightChild(bst.getRoot())->getData()<<endl;
-    cout<<bst.getRightMostNode()->getData();
-
+    cout<<"left Child Data: "<<bst.getLeftChild(bst.getRoot())->getData()<<endl;
+    cout<<"Right Child Data: "<<bst.getRightChild(bst.getRoot())->getData()<<endl;
+    // cout<<endl<<"Successor: "<<bst.getSuccessor(bst.getRoot()->getRight())->getData()<<endl;
+    cout<<endl<<"Successor: "<<bst.getSuccessor(bst.getLeafNode(bst.getRoot()))->getData()<<endl;
+    // cout<<endl<<"Successor: "<<bst.getSuccessor(bst.getRoot()->getRight())->getData()<<endl;
+    cout<<"Leaf Node: "<<bst.getLeafNode(bst.getRoot())->getData()<<endl;
     return 0;
 }
