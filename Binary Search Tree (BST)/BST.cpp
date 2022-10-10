@@ -222,6 +222,15 @@ class BST{
         }
     }
     
+    int size(Node *root){
+        if(root == NULL){
+            return 0;
+        }
+        else{
+            return 1 + size(root->getLeft()) + size(root->getRight());
+        }
+    }
+    
 };
 
 
