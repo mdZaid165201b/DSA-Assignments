@@ -213,6 +213,14 @@ class BST{
         return num2;
     }
     
+    int height(Node *root){
+        if(root == NULL){
+            return 0;
+        }
+        else{
+            return 1 + max(height(root->getLeft()),height(root->getRight()));
+        }
+    }
     
 };
 
