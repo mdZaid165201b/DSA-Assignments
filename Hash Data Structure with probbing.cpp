@@ -46,6 +46,30 @@ class Hash{
         }
     }
     
+    bool deleteVal(int val){
+        int index = hashFunction(val);
+        if(arr[index] == val){
+            arr[index] = -1;
+            return true;
+        }
+        int i = index;
+        while(i < 10){
+            if(arr[i] == val){
+                arr[i] = -1;
+                return true;
+            }
+            i++;
+        }
+        i = 0;
+        while(i < index){
+            if(arr[i] == val){
+                arr[i] = -1;
+                return true;
+            }
+        }
+        return false;
+    }
+    
 };
 
 int main()
