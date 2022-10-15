@@ -83,6 +83,5 @@ int main()
     
     h1.deleteVal(15);
     h1.print();
-
     return 0;
 }
