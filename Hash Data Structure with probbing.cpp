@@ -80,6 +80,9 @@ int main()
     h1.insert(15);
     h1.insert(20);
     h1.print();
+    
+    h1.deleteVal(15);
+    h1.print();
 
     return 0;
 }
