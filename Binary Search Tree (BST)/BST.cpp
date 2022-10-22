@@ -259,6 +259,13 @@ class BST{
         return arr[index];
     }
     
+    int utilFunc(Node *root ,int arr[],int index){
+        if(root == NULL){ return index; }
+        int in = utilFunc(root->getLeft(),arr,index+1);
+        arr[index] = root->getData();
+        return utilFunc(root->getRight(),arr,in);
+    }
+    
 };
 
 
