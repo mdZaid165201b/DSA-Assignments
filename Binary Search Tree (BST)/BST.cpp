@@ -292,5 +292,7 @@ int main()
     cout<<endl<<"Successor: "<<bst.getSuccessor(bst.getLeafNode(bst.getRoot()))->getData()<<endl;
     // cout<<endl<<"Successor: "<<bst.getSuccessor(bst.getRoot()->getRight())->getData()<<endl;
     cout<<"Leaf Node: "<<bst.getLeafNode(bst.getRoot())->getData()<<endl;
+    
+    cout<<"Nearest :"<<bst.findNearest(19);
     return 0;
 }
